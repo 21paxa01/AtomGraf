@@ -42,7 +42,7 @@ public class location_background : MonoBehaviour
         if (locations.location_i!=i)
             music.volume = 0;
         else
-            music.volume = 0;
+            music.volume = 1;
     }
     public void UpdeteLocate()
     {
