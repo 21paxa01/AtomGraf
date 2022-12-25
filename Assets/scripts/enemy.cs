@@ -9,7 +9,7 @@ public class enemy : MonoBehaviour
     public int icon_i;
     public Animator anim;
     public bool death;
-    private bool sound_chek;
+    private bool sound_chek,score_chek;
     public AudioSource hit,death_sound;
     void Start()
     {
@@ -45,7 +45,7 @@ public class enemy : MonoBehaviour
     {
         if (other.name == "hero")
         {
-            if (other.gameObject.GetComponent<hero>().kick == false&&death==false)
+            if (other.gameObject.GetComponent<hero>().kick == false && death == false)
             {
                 if (other.gameObject.GetComponent<hero>().shield == false)
                     other.gameObject.GetComponent<hero>().hp -= 1;
@@ -57,7 +57,14 @@ public class enemy : MonoBehaviour
                     hit.Play();
             }
             else
+            {
                 death = true;
+                if (score_chek == false)
+                {
+                    score_chek = true;
+                    score.score_value += 50;
+                }
+            }
         }
     }
 }

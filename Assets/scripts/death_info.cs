@@ -24,7 +24,7 @@ public class death_info : MonoBehaviour
         titles[0] = kolobok_titles; titles[1] = izba_titles; titles[2] = yaga_titles; titles[3] = vodyanoi_titles; titles[4] = ciklop_titles; titles[5] = oborot_titles; titles[6] = koshzei_titles;
         info_arr[0]=kolobok_info; info_arr[1]=izba_info; info_arr[2]=yaga_info; info_arr[3]=vodyanoi_info; info_arr[4]=ciklop_info; info_arr[5]=oborot_info; info_arr[6]=koshzei_info;
         update_icon();
-        //Telegram.WebApp.TGWebApp.instance.SetScore(score.score_value);
+        Telegram.WebApp.TGWebApp.instance.SetScore(score.score_value);
     }
 
     void Update()

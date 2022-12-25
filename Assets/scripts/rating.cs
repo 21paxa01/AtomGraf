@@ -50,12 +50,17 @@ public class rating : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             top[i].SetPlayerInfo(RateTable.top[i]);
+            if (RateTable.top[i].username == RateTable.my.username)
+                top[i].ImageColor();
         }
         for (int i = 0; i < count; i++)
         {
             down[i].SetPlayerInfo(RateTable.down[i]);
+            if(RateTable.down[i].username== RateTable.my.username)
+                down[i].ImageColor();
         }
         my.SetPlayerInfo(RateTable.my);
+        my.ImageColor();
         if (Contains(RateTable.top,RateTable.my) || Contains(RateTable.down, RateTable.my))
         {
             separatorDown.SetActive(false);
@@ -65,6 +70,6 @@ public class rating : MonoBehaviour
     }
     private bool Contains(UserInfo[] userInfoes,UserInfo user)
     {
-        return userInfoes.First(x => x.rate == user.rate) != null;
+        return userInfoes.FirstOrDefault(x => x.rate == user.rate) != null;
     }
 }

@@ -35,7 +35,7 @@ namespace Telegram.WebApp
             {
                 id = 1,
                 is_bot = false,
-                first_name = "test"
+                first_name = "pavlik"
             };
 #endif
             Debug.Log("Telegram Web App init");
