@@ -39,10 +39,13 @@ public class location_background : MonoBehaviour
     {
         if (test <= -13f)
             transform.position = new Vector3(transform.position.x, 19.09633f*1.5f, transform.position.z);
-        if (locations.location_i!=i)
-            music.volume = 0;
-        else
-            music.volume = 1;
+        if (PlayerPrefs.GetInt("music") == 1)
+        {
+            if (locations.location_i != i)
+                music.volume = 0;
+            else
+                music.volume = 1;
+        }
     }
     public void UpdeteLocate()
     {

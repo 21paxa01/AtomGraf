@@ -11,19 +11,21 @@ public class enemy : MonoBehaviour
     public bool death;
     private bool sound_chek,score_chek;
     public AudioSource hit,death_sound;
+    private Rigidbody2D rb;
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         DestroyChek();
-        transform.Translate(Vector2.down * speed * Time.deltaTime);
+        //transform.Translate(Vector2.down * speed * Time.deltaTime);
+        rb.velocity = new Vector2(0, -speed);
         if (death == true)
         {
-            anim.enabled = true;
+            anim.SetBool("death", true);
             if(sound_chek==false)
             {
                 sound_chek = true;
