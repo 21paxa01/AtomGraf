@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -49,7 +50,7 @@ namespace Telegram.WebApp
         }
         public RateTable GetRateTable(int count)
         {
-            string uri = Path.Combine(RestApiURL, stats,"?count="+count);
+            string uri = Path.Combine(RestApiURL, stats,$"?count={count}&username={userData.first_name}");
             UnityWebRequest request = UnityWebRequest.Get(uri);
             var table = new RateTable( request.SendWebRequest());
             return table;
@@ -67,6 +68,7 @@ namespace Telegram.WebApp
     [Serializable]
     public class UserInfo
     {
+        public string rate;
         public string username;
         public string score;
     }
@@ -74,7 +76,9 @@ namespace Telegram.WebApp
     [Serializable]
     public class RateTable : CustomYieldInstruction
     {
-        public UserInfo[] table;
+        public UserInfo[] top;
+        public UserInfo[] down;
+        public UserInfo my;
         private UnityWebRequestAsyncOperation request;
         public RateTable(UnityWebRequestAsyncOperation request)
         {
@@ -89,7 +93,7 @@ namespace Telegram.WebApp
                     return true;
                 Debug.Log(request.webRequest.downloadHandler.text);
                 JsonUtility.FromJsonOverwrite(request.webRequest.downloadHandler.text,this);
-
+                down = down.Reverse().ToArray();
                 return false; 
             } 
         }
