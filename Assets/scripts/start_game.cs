@@ -28,13 +28,13 @@ public class start_game : MonoBehaviour
     }
     public void start()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
         Time.timeScale = 1;
     }
 
     public void restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void SoundsOff()
     {
