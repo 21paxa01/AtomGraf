@@ -25,7 +25,7 @@ public class OpenLink : MonoBehaviour
     }
     public void Link()
     {
-        Application.OpenURL("https://ruvds.com/ru-rub");
+        Application.OpenURL("http://bit.ly/3VkxiJL");
     }
     IEnumerator DoubleClick()
     {
