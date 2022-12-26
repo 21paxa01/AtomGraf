@@ -1693,7 +1693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872aa898112d27d4b9cfeaf526aeaef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: http://www.ruvds.com/
+  url: https://ruvds.com/ru-rub
   click: 0
   menu: {fileID: 193521354}
 --- !u!1 &578290745
