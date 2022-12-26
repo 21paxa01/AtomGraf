@@ -16,6 +16,10 @@ namespace Telegram.WebApp
         public static TGWebApp instance;
         [DllImport("__Internal")]
         private static extern string GetUserData();
+        [DllImport("__Internal")]
+        private static extern string GetInitData();
+        [DllImport("__Internal")]
+        private static extern string GetHash();
         public UserData userData { get; private set; }
 
         void Awake()
@@ -35,7 +39,8 @@ namespace Telegram.WebApp
             {
                 id = 1,
                 is_bot = false,
-                first_name = "pavlik"
+                first_name = "pavlik",
+                username = "@Vlad12234"
             };
 #endif
             Debug.Log("Telegram Web App init");
@@ -44,13 +49,21 @@ namespace Telegram.WebApp
         {
             string uri = Path.Combine(RestApiURL, init);
             WWWForm form = new WWWForm();
-            form.AddField("username", userData.first_name);
+#if UNITY_EDITOR
+            form.AddField("initData", "test");
+#else
+            form.AddField("initData", GetInitData());
+            form.AddField("hash", GetHash());
+
+#endif
+            form.AddField("username", userData.username);
+            form.AddField("id", userData.id.ToString());
             UnityWebRequest request = UnityWebRequest.Post(uri, form);
             return request.SendWebRequest();
         }
         public RateTable GetRateTable(int count)
         {
-            string uri = Path.Combine(RestApiURL, stats,$"?count={count}&username={userData.first_name}");
+            string uri = Path.Combine(RestApiURL, stats,$"?count={count}&username={userData.username}");
             UnityWebRequest request = UnityWebRequest.Get(uri);
             var table = new RateTable( request.SendWebRequest());
             return table;
@@ -59,7 +72,7 @@ namespace Telegram.WebApp
         {
             string uri = Path.Combine(RestApiURL, set);
             WWWForm form = new WWWForm();
-            form.AddField("username", userData.first_name);
+            form.AddField("username", userData.username);
             form.AddField("score", score);
             UnityWebRequest request = UnityWebRequest.Post(uri, form);
             return request.SendWebRequest();
@@ -102,8 +115,9 @@ namespace Telegram.WebApp
     [Serializable]
     public class UserData
     {
-        public int id;
+        public long id;
         public bool is_bot;
         public string first_name;
+        public string username;
     }
 }

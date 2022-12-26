@@ -13,7 +13,15 @@ public class InitWebApp : MonoBehaviour
         loadScreen.gameObject.SetActive(true);
         var request = TGWebApp.instance.Init();
         yield return request;
-        loadScreen.gameObject.SetActive(false);
-        isInit=true;
+        if(request.webRequest.result!=UnityEngine.Networking.UnityWebRequest.Result.Success)
+        {
+            Debug.Log("Error");
+        }
+        else
+        {
+            loadScreen.gameObject.SetActive(false);
+            isInit=true;
+        }
+        Debug.Log(request.webRequest.downloadHandler.text);
     }
 }
