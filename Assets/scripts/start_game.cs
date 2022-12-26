@@ -9,6 +9,7 @@ public class start_game : MonoBehaviour
     public bool start_menu;
     void Start()
     {
+        Time.timeScale = 1f;
         if (start_menu == true)
         {
             if (PlayerPrefs.GetInt("music") == -1)

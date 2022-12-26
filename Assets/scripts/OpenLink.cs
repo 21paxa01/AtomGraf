@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class OpenLink : MonoBehaviour
 {
-    public string url;
     public int click;
     public GameObject menu;
     void Start()
@@ -26,7 +25,7 @@ public class OpenLink : MonoBehaviour
     }
     public void Link()
     {
-        Application.OpenURL(url);
+        Application.OpenURL("https://ruvds.com/ru-rub");
     }
     IEnumerator DoubleClick()
     {
