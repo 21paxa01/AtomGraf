@@ -50,9 +50,9 @@ public class enemy : MonoBehaviour
             if (other.gameObject.GetComponent<hero>().kick == false && death == false)
             {
                 if (other.gameObject.GetComponent<hero>().shield == false)
-                    other.gameObject.GetComponent<hero>().hp -= 1;
+                    other.gameObject.GetComponent<hero>().hp -= 3;
                 else
-                    other.gameObject.GetComponent<hero>().hp -= 0.3334f;
+                    other.gameObject.GetComponent<hero>().hp -= 1f;
                 death_info.i = icon_i;
                 other.gameObject.GetComponent<hero>().damage();
                 if (PlayerPrefs.GetInt("music") != -1)

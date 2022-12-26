@@ -6,18 +6,22 @@ using UnityEngine.SceneManagement;
 public class start_game : MonoBehaviour
 {
     public GameObject musicon,musicoff;
+    public bool start_menu;
     void Start()
     {
-        if (PlayerPrefs.GetInt("music") == -1)
+        if (start_menu == true)
         {
-            musicoff.SetActive(false);
-            musicon.SetActive(true);
-        }
-        else
-        {
-            musicoff.SetActive(true);
-            musicon.SetActive(false);
+            if (PlayerPrefs.GetInt("music") == -1)
+            {
+                musicoff.SetActive(false);
+                musicon.SetActive(true);
+            }
+            else
+            {
+                musicoff.SetActive(true);
+                musicon.SetActive(false);
 
+            }
         }
     }
 
