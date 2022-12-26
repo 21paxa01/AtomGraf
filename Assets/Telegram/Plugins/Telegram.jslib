@@ -41,6 +41,11 @@ GetUserData: function()
     	var buffer = _malloc(bufferSize);
     	stringToUTF8(endpoint , buffer, bufferSize);
     	return buffer;
+     },
+	OpenURI: function(url)
+     {
+        url = Pointer_stringify(url);
+        window.open(url,'_blank');
      }
 };
 

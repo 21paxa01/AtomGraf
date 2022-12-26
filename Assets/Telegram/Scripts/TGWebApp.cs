@@ -2,6 +2,9 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -22,12 +25,22 @@ namespace Telegram.WebApp
         private static extern string GetHash();
         [DllImport("__Internal")]
         private static extern void FixAudio();
+        [DllImport("__Internal")]
+        private static extern void OpenURI(string url);
+        public static void OpenURL(string url)
+        {
+#if UNITY_EDITOR
+            Application.OpenURL(url);
+#else
+            OpenURI(url);
+#endif
+        }
         public UserData userData { get; private set; }
 
         void Awake()
         {
             if (instance)
-            { 
+            {
                 Destroy(gameObject);
                 return;
             }
@@ -66,9 +79,9 @@ namespace Telegram.WebApp
         }
         public RateTable GetRateTable(int count)
         {
-            string uri = Path.Combine(RestApiURL, stats,$"?count={count}&username={userData.username}");
+            string uri = Path.Combine(RestApiURL, stats, $"?count={count}&username={userData.username}");
             UnityWebRequest request = UnityWebRequest.Get(uri);
-            var table = new RateTable( request.SendWebRequest());
+            var table = new RateTable(request.SendWebRequest());
             return table;
         }
         public UnityWebRequestAsyncOperation SetScore(int score)
@@ -80,6 +93,14 @@ namespace Telegram.WebApp
             UnityWebRequest request = UnityWebRequest.Post(uri, form);
             return request.SendWebRequest();
         }
+#if UNITY_EDITOR
+        [MenuItem("MyMenu/Do Something")]
+        public static void Test()
+        {
+            Debug.Log( Encode("test","key"));
+        
+        }
+#endif
         public static string Encode(string text,string key)
         {
 
@@ -88,10 +109,12 @@ namespace Telegram.WebApp
             for (int i = 0; i < text.Length; i++)
             {
                 char textChar = text[0];
-                char keyChar = key[(i%keyLegth)-1];
-                result += Convert.ToByte(textChar)- Convert.ToByte(textChar);
+                char keyChar = key[(i%keyLegth)];
+                result += Convert.ToChar(Convert.ToByte(textChar)+Convert.ToByte(keyChar));
             }
-            return result;
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(result);
+            return Convert.ToBase64String(plainTextBytes);
+            
         }
     }
     [Serializable]

@@ -1,20 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Telegram.WebApp;
 using UnityEngine;
 
 public class OpenLink : MonoBehaviour
 {
     public int click;
     public GameObject menu;
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void Open()
     {
         click++;
@@ -25,7 +17,7 @@ public class OpenLink : MonoBehaviour
     }
     public void Link()
     {
-        Application.OpenURL("http://bit.ly/3VkxiJL");
+        TGWebApp.OpenURL("https://ruvds.com/");
     }
     IEnumerator DoubleClick()
     {
