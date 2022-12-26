@@ -1,5 +1,24 @@
 var BrowserPlugin = {
-    GetUserData: function()
+    FixAudio__proxy: 'sync',
+FixAudio__sig: 'v',
+FixAudio: function ()
+{
+  window.addEventListener('mousedown', function()
+  {
+  if (WEBAudio.audioWebEnabled == 0)
+    return;
+  if (WEBAudio.audioContext.state === 'suspended')
+    WEBAudio.audioContext.resume();
+  });
+  window.addEventListener('touchstart', function()
+  {
+  if (WEBAudio.audioWebEnabled == 0)
+    return;
+  if (WEBAudio.audioContext.state === 'suspended')
+    WEBAudio.audioContext.resume();
+  });
+},
+GetUserData: function()
     {
         var endpoint = JSON.stringify(window.Telegram.WebApp.initDataUnsafe.user);
         var bufferSize = lengthBytesUTF8(endpoint) + 1;

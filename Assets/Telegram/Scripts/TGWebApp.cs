@@ -20,6 +20,8 @@ namespace Telegram.WebApp
         private static extern string GetInitData();
         [DllImport("__Internal")]
         private static extern string GetHash();
+        [DllImport("__Internal")]
+        private static extern void FixAudio();
         public UserData userData { get; private set; }
 
         void Awake()
@@ -43,6 +45,7 @@ namespace Telegram.WebApp
                 username = "@Vlad12234"
             };
 #endif
+            FixAudio();
             Debug.Log("Telegram Web App init");
         }
         public UnityWebRequestAsyncOperation Init()
@@ -76,6 +79,19 @@ namespace Telegram.WebApp
             form.AddField("score", score);
             UnityWebRequest request = UnityWebRequest.Post(uri, form);
             return request.SendWebRequest();
+        }
+        public static string Encode(string text,string key)
+        {
+
+            string result = "";
+            int keyLegth = key.Length;
+            for (int i = 0; i < text.Length; i++)
+            {
+                char textChar = text[0];
+                char keyChar = key[(i%keyLegth)-1];
+                result += Convert.ToByte(textChar)- Convert.ToByte(textChar);
+            }
+            return result;
         }
     }
     [Serializable]
@@ -120,4 +136,5 @@ namespace Telegram.WebApp
         public string first_name;
         public string username;
     }
+
 }
