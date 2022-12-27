@@ -17,14 +17,16 @@ public class death_info : MonoBehaviour
     public int test;
     public string[][] titles;
     public string[][] info_arr;
-    void Start()
+    IEnumerator Start()
     {
         titles = new string[7][];
         info_arr = new string[7][];
         titles[0] = kolobok_titles; titles[1] = izba_titles; titles[2] = yaga_titles; titles[3] = vodyanoi_titles; titles[4] = ciklop_titles; titles[5] = oborot_titles; titles[6] = koshzei_titles;
         info_arr[0]=kolobok_info; info_arr[1]=izba_info; info_arr[2]=yaga_info; info_arr[3]=vodyanoi_info; info_arr[4]=ciklop_info; info_arr[5]=oborot_info; info_arr[6]=koshzei_info;
         update_icon();
-        Telegram.WebApp.TGWebApp.instance.SetScore(score.score_value);
+        var scroe = Telegram.WebApp.TGWebApp.instance.SetScore(score.score_value);
+        yield return scroe;
+        Debug.Log(scroe.webRequest.downloadHandler.text);
     }
 
     void Update()

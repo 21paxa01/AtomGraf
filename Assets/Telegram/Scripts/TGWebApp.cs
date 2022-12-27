@@ -2,6 +2,8 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Text;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -49,6 +51,7 @@ namespace Telegram.WebApp
 #if !UNITY_EDITOR
             string jsonUserData = GetUserData();
             userData = JsonUtility.FromJson<UserData>(jsonUserData);
+            FixAudio();
 #else
             userData = new UserData()
             {
@@ -58,7 +61,8 @@ namespace Telegram.WebApp
                 username = "@Vlad12234"
             };
 #endif
-            FixAudio();
+
+           
             Debug.Log("Telegram Web App init");
         }
         public UnityWebRequestAsyncOperation Init()
@@ -87,34 +91,41 @@ namespace Telegram.WebApp
         public UnityWebRequestAsyncOperation SetScore(int score)
         {
             string uri = Path.Combine(RestApiURL, set);
-            WWWForm form = new WWWForm();
-            form.AddField("username", userData.username);
-            form.AddField("score", score);
-            UnityWebRequest request = UnityWebRequest.Post(uri, form);
+           
+            var data = new ScoreData() { score=score, username = userData.username };
+            string json = JsonUtility.ToJson(data);
+            json = Encode(json);
+            UnityWebRequest request = UnityWebRequest.Post(uri,new WWWForm());
+            byte[] jsonToSend = new UTF8Encoding().GetBytes(json);
+            request.uploadHandler = new UploadHandlerRaw(jsonToSend);
+            request.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+            //request.SetRequestHeader("Content-Type", "application/json");
             return request.SendWebRequest();
         }
 #if UNITY_EDITOR
         [MenuItem("MyMenu/Do Something")]
         public static void Test()
         {
-            Debug.Log( Encode("test","key"));
-        
+
+            
         }
 #endif
-        public static string Encode(string text,string key)
+        public static string Encode(string message)
         {
 
-            string result = "";
-            int keyLegth = key.Length;
-            for (int i = 0; i < text.Length; i++)
-            {
-                char textChar = text[0];
-                char keyChar = key[(i%keyLegth)];
-                result += Convert.ToChar(Convert.ToByte(textChar)+Convert.ToByte(keyChar));
-            }
-            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(result);
-            return Convert.ToBase64String(plainTextBytes);
-            
+            string password = "3sc3RLrpd17";
+
+            // Create sha256 hash
+            SHA256 mySHA256 = SHA256Managed.Create();
+            byte[] key = mySHA256.ComputeHash(Encoding.ASCII.GetBytes(password));
+
+            // Create secret IV
+            byte[] iv = new byte[16] { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 };
+
+            string encrypted = Cryptography.Crypto.EncryptString(message, key, iv);
+
+            return encrypted;
+
         }
     }
     [Serializable]
@@ -124,7 +135,12 @@ namespace Telegram.WebApp
         public string username;
         public string score;
     }
-
+    [Serializable]
+    public class ScoreData
+    {
+        public string username;
+        public int score;
+    }
     [Serializable]
     public class RateTable : CustomYieldInstruction
     {
