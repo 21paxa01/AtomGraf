@@ -19,6 +19,10 @@ public class OpenLink : MonoBehaviour
     {
         TGWebApp.OpenURL("https://ruvds.com/");
     }
+    public void HabrLink()
+    {
+        TGWebApp.OpenURL("https://habr.com/ru/company/ruvds/blog/707814/");
+    }
     IEnumerator DoubleClick()
     {
         yield return new WaitForSeconds(0.3f);
