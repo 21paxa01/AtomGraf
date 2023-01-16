@@ -120,11 +120,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   test: 0
+  pol: 0
   icon_i: 1
   anim: {fileID: 4250387865208125608}
   death: 0
   hit: {fileID: 1191752191548356645}
   death_sound: {fileID: 4142857518354550481}
+  damage: 4
 --- !u!50 &-4645320756111007470
 Rigidbody2D:
   serializedVersion: 4

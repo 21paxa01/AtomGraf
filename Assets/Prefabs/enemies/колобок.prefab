@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -1179675391255823737}
   - component: {fileID: 6783319537112377206}
   - component: {fileID: 6416048365819249652}
+  - component: {fileID: -6138691006102594481}
   m_Layer: 0
   m_Name: "\u043A\u043E\u043B\u043E\u0431\u043E\u043A"
   m_TagString: enemy
@@ -118,13 +119,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fe0fcd3eba7284f8977c8b6617b1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 4
   test: 0
+  pol: 0
   icon_i: 0
   anim: {fileID: -1179675391255823737}
   death: 0
   hit: {fileID: 6783319537112377206}
   death_sound: {fileID: 6416048365819249652}
+  damage: 4.5
 --- !u!50 &2670742224087672331
 Rigidbody2D:
   serializedVersion: 4
@@ -176,7 +179,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fb53680cb2b6e0d43b0cb7253eb4745b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f5054cbc2314f64418c59a6947a3682f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -272,7 +275,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 175153a33421cab4fa9fa9864b369e42, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fe555bdced2926e4497d1b8916da2012, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -358,3 +361,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6138691006102594481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5398997373143037126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f3c5a9f54246904ebcd9e0926aa6fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 0

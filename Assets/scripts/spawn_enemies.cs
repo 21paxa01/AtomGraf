@@ -8,6 +8,7 @@ public class spawn_enemies : MonoBehaviour
     private float x;
     private int i,j;
     public bool spawn,test;
+    public GameObject kolobok_menu;
     void Start()
     {
         StartCoroutine(Spawn());
@@ -38,7 +39,12 @@ public class spawn_enemies : MonoBehaviour
     void Enemy_position()
     {
         x = Random.Range(-2.4f, 2.4f);
-        i = Random.Range(0, 6);
+        i = Random.Range(0, 8);
         j= Random.Range(0,3);
+    }
+    public void MenuOn()
+    {
+        kolobok_menu.SetActive(true);
+        score.score_value += 3000;
     }
 }
