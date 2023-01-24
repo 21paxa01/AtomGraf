@@ -6,7 +6,7 @@ public class location_background : MonoBehaviour
 {
     public float speed;
     public bool forest, desert;
-    public AudioSource music;
+    public AudioSource music,bw_music;
     public int i;
     public float  test;
     public bool first;
@@ -14,7 +14,6 @@ public class location_background : MonoBehaviour
     private bool locate_chek;
     void Start()
     {
-        music.volume = 1;
         locate_chek = false;
     }
 
@@ -33,7 +32,25 @@ public class location_background : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, 28.033f * 1.5f, transform.position.z);
         }
         if (PlayerPrefs.GetInt("music") == -1)
+        {
             music.volume = 0;
+            bw_music.volume = 0;
+        }
+        else
+        {
+            if (BWMode.mod == false)
+            {
+                music.volume = 1;
+                bw_music.volume = 0;
+            }
+            else
+            {
+
+                music.volume = 0;
+                bw_music.volume = 1;
+            }
+        }
+        
     }
     void tranport()
     {

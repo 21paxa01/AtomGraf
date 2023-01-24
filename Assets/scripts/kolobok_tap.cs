@@ -23,9 +23,9 @@ public class kolobok_tap : MonoBehaviour
     }
     private void MenuOn()
     {
-        if (!PlayerPrefs.HasKey("kolobok_menu"))
+        if (!PlayerPrefs.HasKey("kolobok_menu3"))
         {
-            PlayerPrefs.SetInt("kolobok_menu", 1);
+            PlayerPrefs.SetInt("kolobok_menu3", 1);
             spawn.MenuOn();
         }
     }

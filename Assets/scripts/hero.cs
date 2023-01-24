@@ -12,11 +12,12 @@ public class hero : MonoBehaviour
     public SpriteRenderer sprite;
     private bool reload,boster,shot_chek;
     public bool shield;
-    public AudioSource shot, bost_shot, death, hit, rel0ad, heal, shielD, b0st,kick_sound;
+    public AudioSource shot,bw_shot, bost_shot,bw_bost_shot, death, hit, rel0ad,bw_rel0ad, heal, shielD, b0st,kick_sound;
     public bool kick;
     public Animator anim;
     public int click;
     public lightning script;
+    public GameObject circle;
     void Start()
     {
         
@@ -62,7 +63,12 @@ public class hero : MonoBehaviour
             {
                 reload = true;
                 if (PlayerPrefs.GetInt("music") != -1)
-                    shot.Play();
+                {
+                    if (BWMode.mod == false)
+                        shot.Play();
+                    else
+                        bw_shot.Play();
+                }
                 lightning.SetActive(true);
                 script.reload();
                 StartCoroutine(Reload());
@@ -87,7 +93,12 @@ public class hero : MonoBehaviour
         shot_chek = false;
         reload_circle.SetActive(true);
         if (PlayerPrefs.GetInt("music") != -1)
-            rel0ad.Play();
+        {
+            if (BWMode.mod == false)
+                rel0ad.Play();
+            else
+                bw_rel0ad.Play();
+        }
         yield return new WaitForSeconds(1f);
         reload_circle.SetActive(false);
         reload = false;
@@ -112,7 +123,12 @@ public class hero : MonoBehaviour
         lightning_right.SetActive(true);
         lightning.SetActive(true);
         if (PlayerPrefs.GetInt("music") != -1)
-            bost_shot.Play();
+        {
+            if (BWMode.mod == false)
+                bost_shot.Play();
+            else
+                bw_bost_shot.Play();
+        }
         StartCoroutine(BOST());
     }
     IEnumerator SHIELD()
@@ -128,5 +144,19 @@ public class hero : MonoBehaviour
     public void damage()
     {
         StartCoroutine(Damage());
+    }
+    public void StartBWMode()
+    {
+        StartCoroutine(bwmode());
+    }
+    IEnumerator bwmode()
+    {
+        circle.SetActive(true);
+        BWMode.test = 1;
+        BWMode.mod = true;
+        yield return new WaitForSeconds(10f);
+        circle.SetActive(false);
+        BWMode.test = 0;
+        BWMode.mod = false;
     }
 }

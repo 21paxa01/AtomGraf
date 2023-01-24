@@ -683,6 +683,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   i: 1
   back: 0
+--- !u!1 &34189487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34189488}
+  - component: {fileID: 34189489}
+  m_Layer: 6
+  m_Name: circle
+  m_TagString: circle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &34189488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34189487}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 75041296}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &34189489
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34189487}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6
 --- !u!1 &36232535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,8 +1178,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.8395, y: 119.63}
-  m_SizeDelta: {x: 574.579, y: 84.474}
+  m_AnchoredPosition: {x: -3.8395, y: 108.74}
+  m_SizeDelta: {x: 574.579, y: 106.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &51277447
 MonoBehaviour:
@@ -1153,10 +1201,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0422\u0435\u0431\u044F \u0443\u0431\u0438\u043B\u043E \u043D\u0435 \u043A\u0443\u0440\u0435\u043D\u0438\u0435!
-    \u0422\u0435\u0431\u044F \u0443\u0431\u0438\u043B \u041A\u043E\u0449\u0435\u0439.\r\n"
+  m_text: "\u0419\u0426\u0423\u041A\u0415\u041D\u0413\u0428\u0429\u0417\u0425\u042A\u0424\u042B\u0412\u0410\u041F\u0420\u041E\u041B\u0414\u0416\u042D\u042F\u0421\u0427\u041C\u0418\u0422\u042C\u0411\u042E"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3e558051fe8f5e4498b8b0468f693d1d, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1181,13 +1228,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.25
+  m_fontSize: 25.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 1
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1220,7 +1267,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &51277448
@@ -1475,6 +1522,9 @@ GameObject:
   - component: {fileID: 75041304}
   - component: {fileID: 75041305}
   - component: {fileID: 75041306}
+  - component: {fileID: 75041309}
+  - component: {fileID: 75041308}
+  - component: {fileID: 75041307}
   m_Layer: 6
   m_Name: hero
   m_TagString: Untagged
@@ -1547,6 +1597,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 703598776}
+  - {fileID: 34189488}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1573,10 +1624,13 @@ MonoBehaviour:
   sprite: {fileID: 75041295}
   shield: 0
   shot: {fileID: 75041302}
+  bw_shot: {fileID: 75041309}
   bost_shot: {fileID: 75041301}
+  bw_bost_shot: {fileID: 75041308}
   death: {fileID: 75041304}
   hit: {fileID: 75041300}
   rel0ad: {fileID: 75041303}
+  bw_rel0ad: {fileID: 75041307}
   heal: {fileID: 673206683}
   shielD: {fileID: 673206682}
   b0st: {fileID: 673206681}
@@ -1585,6 +1639,7 @@ MonoBehaviour:
   anim: {fileID: 75041305}
   click: 0
   script: {fileID: 703598779}
+  circle: {fileID: 34189487}
 --- !u!70 &75041298
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2133,6 +2188,294 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 96f6a779413a4e047ae519b0b0b09c58, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &75041307
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75041294}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3c9057f1b839607499ab7458959481f4, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &75041308
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75041294}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0c46443816cc3a849844e04f148a37f9, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &75041309
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75041294}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3f61f1ca9d7f72a46baeda4881304792, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4170,6 +4513,7 @@ GameObject:
   - component: {fileID: 244771904}
   - component: {fileID: 244771907}
   - component: {fileID: 244771908}
+  - component: {fileID: 244771909}
   m_Layer: 0
   m_Name: "\u0433\u043E\u0440\u043E\u0434"
   m_TagString: Untagged
@@ -4335,6 +4679,7 @@ MonoBehaviour:
   forest: 0
   desert: 0
   music: {fileID: 244771904}
+  bw_music: {fileID: 244771909}
   i: 2
   test: 0
   first: 1
@@ -4417,6 +4762,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   i: 2
   back: 1
+--- !u!82 &244771909
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244771902}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a85b533e9e843af438ec0c290e908fe9, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &253293588
 GameObject:
   m_ObjectHideFlags: 0
@@ -6483,6 +6924,7 @@ GameObject:
   - component: {fileID: 486872476}
   - component: {fileID: 486872477}
   - component: {fileID: 486872478}
+  - component: {fileID: 486872479}
   m_Layer: 0
   m_Name: "\u043F\u0443\u0441\u0442\u044B\u043D\u044F"
   m_TagString: Untagged
@@ -6556,6 +6998,7 @@ MonoBehaviour:
   forest: 0
   desert: 1
   music: {fileID: 486872476}
+  bw_music: {fileID: 486872479}
   i: 1
   test: 0
   first: 1
@@ -6734,6 +7177,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   i: 1
   back: 1
+--- !u!82 &486872479
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486872472}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: df07417ff5b31b34cac696370650de5f, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &508500504
 GameObject:
   m_ObjectHideFlags: 0
@@ -7084,6 +7623,7 @@ GameObject:
   - component: {fileID: 519420033}
   - component: {fileID: 519420035}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7246,8 +7786,21 @@ MonoBehaviour:
   sharedProfile: {fileID: 11400000, guid: e0222da59883d1b4b809d4f3c5819249, type: 2}
   isGlobal: 1
   blendDistance: 0
-  weight: 1
+  weight: 0
   priority: 0
+--- !u!114 &519420036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 861ef27072197204e8c4aeb5ead0ecf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: {fileID: 519420035}
 --- !u!1 &541963208
 GameObject:
   m_ObjectHideFlags: 0
@@ -10919,6 +11472,7 @@ MonoBehaviour:
   forest: 0
   desert: 0
   music: {fileID: 486872476}
+  bw_music: {fileID: 0}
   i: 1
   test: 0
   first: 0
@@ -12065,6 +12619,7 @@ MonoBehaviour:
   - {fileID: 121150829940689654, guid: 45c057b81f9f5434a9f9d9ef4e2ec74f, type: 3}
   - {fileID: 7516720211852441924, guid: e4a24c255edfbd44abbfdac63ad0a4bb, type: 3}
   - {fileID: 7516720211852441924, guid: 82bcb2a78b501f34fa900b587ea42164, type: 3}
+  - {fileID: 7223071496169890620, guid: 5be32bd37be5b2a4f9187f3633fefc3d, type: 3}
   bosters_arr:
   - {fileID: 2360075876874824391, guid: 7e59012bd846bcd4ab55b49ac204f4be, type: 3}
   - {fileID: 7028837891141454904, guid: f04256fb3104f5847bb93c317dbc4b43, type: 3}
@@ -13066,6 +13621,7 @@ MonoBehaviour:
   forest: 0
   desert: 0
   music: {fileID: 1941040507}
+  bw_music: {fileID: 0}
   i: 0
   test: 0
   first: 0
@@ -13267,6 +13823,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9d14afd57bd0f7b46b82b4fa7ca67c6e, type: 3}
   - {fileID: 21300000, guid: fd62d1710f7be304582e87bec9c11712, type: 3}
   - {fileID: 21300000, guid: 1df6eaf169079e646918dc80dd250cc6, type: 3}
+  - {fileID: 21300000, guid: cd778e642c527f54eaa3874b89f7a620, type: 3}
   icon: {fileID: 734660030}
   title: {fileID: 51277447}
   info: {fileID: 1479597847}
@@ -13276,9 +13833,9 @@ MonoBehaviour:
     \u043D\u0430\u0442\u043A\u043D\u0435\u0448\u044C\u0441\u044F \u043D\u0430 \u043A\u043E\u043B\u043E\u0431\u043A\u0430."
   - "\xAB\u041D\u0435 \u0435\u0448\u044C \u043C\u0435\u043D\u044F, \u043A\u043E\u043B\u043E\u0431\u043E\u043A,
     \u044F \u0442\u0435\u0431\u0435 \u043F\u0435\u0441\u0435\u043D\u043A\u0443 \u0441\u043F\u043E\u044E\xBB"
-  - "\u041D\u0435 \u0432\u0441\u0451 \u0442\u043E \u043C\u044F\u0433\u043A\u043E\u0435,
+  - "\u041D\u0435 \u0432\u0441\u0435 \u0442\u043E \u043C\u044F\u0433\u043A\u043E\u0435,
     \u0447\u0442\u043E \u043A\u0440\u0443\u0433\u043B\u043E\u0435."
-  - "\u041F\u043E\u0439\u0434\u0451\u0448\u044C \u0432 \u043B\u0435\u0441 \u043F\u043E
+  - "\u041F\u043E\u0439\u0434\u0435\u0448\u044C \u0432 \u043B\u0435\u0441 \u043F\u043E
     \u043D\u0443\u0436\u0434\u0435 \u2014 \u043E\u0431\u0440\u0430\u0442\u043D\u043E
     \u043D\u0435 \u0432\u043E\u0440\u043E\u0442\u0438\u0448\u044C\u0441\u044F."
   izba_titles:
@@ -13347,7 +13904,7 @@ MonoBehaviour:
     \u0410\u043C\u0432\u0440\u043E\u0441\u0438\u0435\u0432\u0438\u0447."
   pol_titles:
   - "\u041A\u0440\u0430\u0441\u043E\u0442\u0430 \u2014 \u0441\u0442\u0440\u0430\u0448\u043D\u0430\u044F
-    \u0441\u0438\u043B\u0430. \u0412 \u0442\u0432\u043E\u0451 \u0441\u043B\u0443\u0447\u0430\u0435
+    \u0441\u0438\u043B\u0430. \u0412 \u0442\u0432\u043E\u0435\u043C \u0441\u043B\u0443\u0447\u0430\u0435
     \u043E\u043D\u0430 \u043E\u043A\u0430\u0437\u0430\u043B\u0430\u0441\u044C \u0441\u043C\u0435\u0440\u0442\u0435\u043B\u044C\u043D\u043E\u0439."
   - "\u0413\u0443\u0431\u0438\u0442 \u043B\u044E\u0434\u0435\u0439 \u043D\u0435 \u043F\u0438\u0432\u043E,
     \u0430 \u0448\u0430\u0448\u043D\u0438 \u0441 \u043F\u043E\u043B\u0443\u0434\u043D\u0438\u0446\u0435\u0439. "
@@ -13360,6 +13917,21 @@ MonoBehaviour:
   - "\u041E\u0442 \u043F\u043E\u043B\u0443\u0434\u043D\u0438\u0446\u044B \u0434\u043E
     \u043A\u0430\u0440\u0446\u0438\u043D\u043E\u043C\u044B \u2014 \u043F\u0430\u0440\u0430
     \u043C\u0438\u043B\u043B\u0438\u0437\u0438\u0432\u0435\u0440\u0442\u043E\u0432."
+  skull_titles:
+  - "\u0412\u0435\u0449\u0438\u0439 \u041E\u043B\u0435\u0433 \u043F\u0440\u0438\u043D\u044F\u043B
+    \u0441\u043C\u0435\u0440\u0442\u044C \u043E\u0442 \u0441\u0432\u043E\u0435\u0433\u043E
+    \u043A\u043E\u043D\u044F, \u0430 \u0442\u044B \u043E\u0442 \u043D\u0435\u0432\u043D\u0438\u043C\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u0438.  "
+  - "\u0427\u0435\u0440\u0435\u043F \u043D\u0435 \u0444\u0435\u043A\u0430\u043B\u0438\u044F,
+    \u043D\u0430\u0441\u0442\u0443\u043F\u0438\u0448\u044C \u2014 \u043D\u0435 \u043E\u0442\u043C\u043E\u0435\u0448\u044C\u0441\u044F.  "
+  - "\u041D\u0435 \u0441\u0442\u043E\u0438\u043B\u043E \u0442\u0435\u0431\u0435 \u043D\u0430
+    \u0447\u0435\u0440\u0435\u043F \u043D\u0430\u0441\u0442\u0443\u043F\u0430\u0442\u044C,
+    \u043D\u0435 \u0432\u044B\u043D\u0435\u0441 \u0442\u044B \u043F\u043E\u0441\u043B\u0435\u0434\u0441\u0442\u0432\u0438\u0439. "
+  - "\u041F\u043E\u0433\u0443\u0431\u0438\u043B \u0442\u0435\u0431\u044F \u0447\u0435\u0440\u0435\u043F
+    \u043E\u043A\u0430\u044F\u043D\u043D\u044B\u0439, \u0440\u0430\u0441\u043F\u0440\u043E\u0441\u0442\u0440\u0430\u043D\u0438\u0432\u0448\u0438\u0439
+    \u0432\u043E\u043A\u0440\u0443\u0433 \u0441\u0435\u0431\u044F \u043C\u0440\u0430\u043A
+    \u0445\u0442\u043E\u043D\u0438\u0447\u0435\u0441\u043A\u0438\u0439. "
+  - "\u041D\u0430\u0441\u0442\u0443\u043F\u0438\u043B \u043D\u0435\u043B\u043E\u0432\u043A\u043E
+    \u2014 \u0438 \u0441\u044B\u0433\u0440\u0430\u043B \u0442\u044B \u0432 \u044F\u0449\u0438\u043A.  "
   kolobok_info:
   - "\u041F\u043E \u043E\u0434\u043D\u043E\u0439 \u0438\u0437 \u0432\u0435\u0440\u0441\u0438\u0439,
     \u043F\u0435\u0440\u0432\u044B\u0435 \u043A\u043E\u043B\u043E\u0431\u043A\u0438
@@ -13371,7 +13943,7 @@ MonoBehaviour:
     \u0441\u0442\u0430\u043B\u0438 \u043F\u043B\u043E\u0442\u043E\u044F\u0434\u043D\u044B\u043C\u0438
     \u0438 \u043A\u0440\u0430\u0439\u043D\u0435 \u0430\u0433\u0440\u0435\u0441\u0441\u0438\u0432\u043D\u044B\u043C\u0438
     \u0448\u0430\u0440\u0430\u043C\u0438."
-  - "\u0423\u0447\u0451\u043D\u044B\u0435 \u0434\u043E \u0441\u0438\u0445 \u043F\u043E\u0440
+  - "\u0423\u0447\u0435\u043D\u044B\u0435 \u0434\u043E \u0441\u0438\u0445 \u043F\u043E\u0440
     \u0441\u043F\u043E\u0440\u044F\u0442, \u043F\u043E\u0447\u0435\u043C\u0443 \u043A\u043E\u043B\u043E\u0431\u043A\u043E\u0432
     \u043D\u0435 \u0443\u043A\u0430\u0447\u0438\u0432\u0430\u0435\u0442 \u0432\u043E
     \u0432\u0440\u0435\u043C\u044F \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F.
@@ -13396,7 +13968,7 @@ MonoBehaviour:
   - "\u0412\u043D\u0435\u0448\u043D\u043E\u0441\u0442\u044C \u043A\u043E\u043B\u043E\u0431\u043A\u0430
     \u043E\u0431\u043C\u0430\u043D\u0447\u0438\u0432\u0430: \u044D\u0442\u043E \u043D\u0435
     \u043C\u044F\u0433\u043A\u0430\u044F \u0441\u0434\u043E\u0431\u043D\u0430\u044F
-    \u0431\u0443\u043B\u043E\u0447\u043A\u0430, \u0430 \u0442\u0432\u0451\u0440\u0434\u044B\u0439
+    \u0431\u0443\u043B\u043E\u0447\u043A\u0430, \u0430 \u0442\u0432\u0435\u0440\u0434\u044B\u0439
     \u043C\u0443\u0441\u043A\u0443\u043B\u0438\u0441\u0442\u044B\u0439 \u0448\u0430\u0440
     \u0441 \u0445\u043E\u0440\u043E\u0448\u043E \u0440\u0430\u0437\u0432\u0438\u0442\u044B\u043C\u0438
     \u0447\u0435\u043B\u044E\u0441\u0442\u044F\u043C\u0438 \u0438 \u043F\u043E\u0433\u0430\u043D\u044B\u043C
@@ -13425,7 +13997,7 @@ MonoBehaviour:
     \u043E\u0440\u0443\u0436\u0438\u044F \u043F\u0440\u043E\u0442\u0438\u0432 \u043E\u0440\u0434\u044B
     \u0445\u0430\u043D\u0430 \u0422\u043E\u0445\u0442\u0430\u043C\u044B\u0448\u0430.
     \u0418\u0437-\u0437\u0430 \u0430\u0442\u043E\u043C\u043D\u043E\u0433\u043E \u0432\u0437\u0440\u044B\u0432\u0430
-    \u0432 1812-\u043C \u0438\u0437\u0431\u0451\u043D\u043A\u0438 \u0440\u0430\u0437\u0431\u0435\u0436\u0430\u043B\u0438\u0441\u044C
+    \u0432 1812-\u043C \u0438\u0437\u0431\u0435\u043D\u043A\u0438 \u0440\u0430\u0437\u0431\u0435\u0436\u0430\u043B\u0438\u0441\u044C
     \u0438\u0437 \u043C\u0435\u0441\u0442 \u0434\u0438\u0441\u043B\u043E\u043A\u0430\u0446\u0438\u0438
     \u043F\u043E \u043B\u0435\u0441\u0430\u043C, \u043E\u0434\u0438\u0447\u0430\u043B\u0438
     \u0438 \u0441\u0442\u0430\u043B\u0438 \u043D\u0430\u043F\u0430\u0434\u0430\u0442\u044C
@@ -13437,13 +14009,13 @@ MonoBehaviour:
     \u0441\u0442\u0430\u043B\u043E \u043F\u0440\u043E\u043E\u0431\u0440\u0430\u0437\u043E\u043C
     \u0442\u0430\u043D\u043A\u043E\u0432\u044B\u0445 \u0432\u043E\u0439\u0441\u043A.
     \u041A\u0440\u0435\u043F\u043A\u0438\u0439 \u0434\u0443\u0431\u043E\u0432\u044B\u0439
-    \u0441\u0440\u0443\u0431, \u0442\u0440\u0451\u0445\u043C\u0435\u0442\u0440\u043E\u0432\u044B\u0435
+    \u0441\u0440\u0443\u0431, \u0442\u0440\u0435\u0445\u043C\u0435\u0442\u0440\u043E\u0432\u044B\u0435
     \u043D\u043E\u0433\u0438 \u043A\u0430\u043A \u0443 \u0432\u0435\u043B\u043E\u0446\u0438\u0440\u0430\u043F\u0442\u043E\u0440\u0430,
     \u0431\u0435\u0437\u0431\u0430\u0448\u0435\u043D\u043D\u044B\u0439 \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440
     \u0438 \u043F\u0443\u0441\u0442\u043E\u0439 \u0447\u0435\u0440\u0434\u0430\u043A
     \u0434\u0435\u043B\u0430\u043B\u0438 \u0438\u0437\u0431\u0443 \u043E\u0447\u0435\u043D\u044C
     \u043E\u043F\u0430\u0441\u043D\u044B\u043C \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u043E\u043C
-    \u043D\u0430 \u0441\u0442\u0451\u0436\u043A\u0430\u0445-\u0434\u043E\u0440\u043E\u0436\u043A\u0430\u0445.\t"
+    \u043D\u0430 \u0441\u0442\u0435\u0436\u043A\u0430\u0445-\u0434\u043E\u0440\u043E\u0436\u043A\u0430\u0445.\t"
   - "\u0424\u0440\u0430\u043D\u0446\u0443\u0437\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043B\u0438
     \u043F\u043E\u0439\u043C\u0430\u043D\u043D\u044B\u0435 \u0438\u0437\u0431\u044B
     \u043D\u0430 \u043A\u0443\u0440\u044C\u0438\u0445 \u043D\u043E\u0433\u0430\u0445
@@ -13475,7 +14047,7 @@ MonoBehaviour:
     \u043D\u0440\u0430\u0432. \u0423 \u043C\u043E\u043B\u043E\u0434\u044B\u0445 \u0438\u0437\u0431
     \u043A\u0440\u044B\u0448\u0430 \u0448\u0438\u0444\u0435\u0440\u043D\u0430\u044F,
     \u0441 \u0432\u043E\u0437\u0440\u0430\u0441\u0442\u043E\u043C \u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u0441\u044F
-    \u0447\u0435\u0440\u0435\u043F\u0438\u0447\u043D\u043E\u0439, \u0430 \u0443 \u043C\u0430\u0442\u0451\u0440\u044B\u0445
+    \u0447\u0435\u0440\u0435\u043F\u0438\u0447\u043D\u043E\u0439, \u0430 \u0443 \u043C\u0430\u0442\u0435\u0440\u044B\u0445
     \u2014 \u043E\u0446\u0438\u043D\u043A\u043E\u0432\u0430\u043D\u043D\u043E\u0439.
     \u0415\u0441\u043B\u0438 \u0438\u0437\u0431\u0443 \u043D\u0430\u043F\u0443\u0433\u0430\u0442\u044C,
     \u043E\u043D\u0430 \u043F\u0440\u044F\u0447\u0435\u0442 \u0433\u043E\u043B\u043E\u0432\u0443
@@ -13495,14 +14067,14 @@ MonoBehaviour:
     \u0440\u043E\u0434\u043E\u043D\u0430\u0447\u0430\u043B\u044C\u043D\u0438\u043A\u043E\u043C
     \u0444\u0440\u043E\u043D\u0442\u043E\u0432\u043E\u0439 \u0430\u0432\u0438\u0430\u0446\u0438\u0438.
     \u0413\u043E\u0432\u043E\u0440\u044F\u0442, \u0432 \u0414\u0435\u043D\u044C \u0412\u0412\u0421
-    \u0435\u0451 \u0438\u043D\u043E\u0433\u0434\u0430 \u0432\u0441\u0442\u0440\u0435\u0447\u0430\u044E\u0442
+    \u0435\u0435 \u0438\u043D\u043E\u0433\u0434\u0430 \u0432\u0441\u0442\u0440\u0435\u0447\u0430\u044E\u0442
     \u0432 \u043B\u0435\u0441\u0430\u0445 \u0440\u044F\u0434\u043E\u043C \u0441 \u0437\u0430\u0431\u0440\u043E\u0448\u0435\u043D\u043D\u044B\u043C\u0438
     \u0432\u043E\u0435\u043D\u043D\u044B\u043C\u0438 \u0430\u044D\u0440\u043E\u0434\u0440\u043E\u043C\u0430\u043C\u0438. "
   - "\u0425\u043E\u0434\u044F\u0442 \u0441\u043B\u0443\u0445\u0438, \u0447\u0442\u043E
     \u0443 \u042F\u0433\u0438 \u043D\u0430\u0442\u044F\u043D\u0443\u0442\u044B\u0435
     \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u044F \u0441 \u041A\u043E\u0449\u0435\u0435\u043C.
     \u0422\u043E\u0442 \u043A \u043D\u0435\u0439 \u0441\u0432\u0430\u0442\u0430\u0442\u044C\u0441\u044F
-    \u043F\u0440\u0438\u0445\u043E\u0434\u0438\u043B, \u043D\u043E \u043F\u0440\u0438\u0448\u0451\u043B
+    \u043F\u0440\u0438\u0445\u043E\u0434\u0438\u043B, \u043D\u043E \u043F\u0440\u0438\u0448\u0435\u043B
     \u0432 \u043A\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0434\u043D\u0438,
     \u0431\u0430\u0431\u0430 \u043F\u0441\u0438\u0445\u0430\u043D\u0443\u043B\u0430
     \u0438 \u043E\u0442\u0445\u043E\u0434\u0438\u043B\u0430 \u0435\u0433\u043E \u043A\u043E\u0441\u0442\u044F\u043D\u043E\u0439
@@ -13513,7 +14085,7 @@ MonoBehaviour:
     \u043F\u0435\u043A\u043B\u0430 \u043A\u0443\u043B\u0438\u0447\u0438, \u043A\u0432\u0430\u0441\u0438\u043B\u0430
     \u0431\u0440\u0443\u0441\u043D\u0438\u043A\u0443 \u0438 \u043F\u043B\u0435\u043B\u0430
     \u0442\u0443\u0435\u0441\u043A\u0438. \u0410 \u043A\u0430\u043A \u043D\u0430\u0445\u043B\u043E\u0431\u0443\u0447\u0438\u043B\u043E
-    \u0435\u0451 \u044F\u0434\u0440\u0451\u043D\u044B\u043C \u0432\u0437\u0440\u044B\u0432\u043E\u043C,
+    \u0435\u0435 \u044F\u0434\u0440\u0435\u043D\u044B\u043C \u0432\u0437\u0440\u044B\u0432\u043E\u043C,
     \u0442\u0430\u043A \u043A\u0443\u043A\u0443\u0445\u0430 \u043D\u0430\u0431\u0435\u043A\u0440\u0435\u043D\u044C:
     \u043D\u0430\u0447\u0430\u043B\u0430 \u0432 \u0441\u0442\u0443\u043F\u0435 \u043B\u0435\u0442\u0430\u0442\u044C
     \u0438 \u0442\u0432\u043E\u0440\u0438\u0442\u044C \u0431\u0435\u0441\u0447\u0438\u043D\u0441\u0442\u0432\u0430."
@@ -13558,11 +14130,11 @@ MonoBehaviour:
     \u0436\u0440\u0430\u0442\u044C \u0434\u043E\u0445\u043B\u044B\u0445 \u043B\u044F\u0433\u0443\u0448\u0435\u043A,
     \u0433\u043D\u0438\u044E\u0449\u0443\u044E \u0440\u044F\u0441\u043A\u0443 \u0438
     \u043D\u0435\u0447\u0438\u0441\u0442\u043E\u0442\u044B, \u0441\u043B\u0438\u0432\u0430\u0435\u043C\u044B\u0435
-    \u043F\u0440\u0438\u0431\u0440\u0435\u0436\u043D\u044B\u043C\u0438 \u0441\u0451\u043B\u0430\u043C\u0438.
+    \u043F\u0440\u0438\u0431\u0440\u0435\u0436\u043D\u044B\u043C\u0438 \u0441\u0435\u043B\u0430\u043C\u0438.
     \u041F\u043E\u044D\u0442\u043E\u043C\u0443 \u0443\u043A\u0443\u0441 \u0412\u043E\u0434\u044F\u043D\u043E\u0433\u043E
     \u043F\u0440\u0438\u0432\u043E\u0434\u0438\u0442 \u043A \u0437\u0430\u0440\u0430\u0436\u0435\u043D\u0438\u044E
     \u043A\u0440\u043E\u0432\u0438, \u0433\u0435\u043F\u0430\u0442\u0438\u0442\u0443
-    \u0438 \u0438\u043D\u0432\u0430\u0437\u0438\u0438 \u0441\u043E\u043B\u0438\u0442\u0451\u0440\u0430. "
+    \u0438 \u0438\u043D\u0432\u0430\u0437\u0438\u0438 \u0441\u043E\u043B\u0438\u0442\u0435\u0440\u0430. "
   - "\u0413\u043B\u044F\u0434\u044F \u0438\u0437-\u043F\u043E\u0434 \u0432\u043E\u0434\u044B
     \u0432\u043E\u0434\u044F\u043D\u0438\u0441\u0442\u044B\u043C\u0438 \u0440\u044B\u0431\u044C\u0438\u043C\u0438
     \u0433\u043B\u0430\u0437\u0430\u043C\u0438, \u0412\u043E\u0434\u044F\u043D\u043E\u0439
@@ -13580,7 +14152,7 @@ MonoBehaviour:
     \u043A\u0443\u043F\u0430\u044E\u0449\u0438\u0445\u0441\u044F \u043D\u0435 \u0432\u044B\u0433\u043E\u0434\u043D\u043E,
     \u0438 \u043E\u0442\u043A\u0440\u044B\u043B \u0431\u0438\u0437\u043D\u0435\u0441:
     \u043D\u0430\u0447\u0430\u043B \u043F\u0440\u043E\u0434\u0430\u0432\u0430\u0442\u044C
-    \u043F\u0430\u043B\u0451\u043D\u044B\u0435 \u0440\u044B\u0431\u043D\u044B\u0435
+    \u043F\u0430\u043B\u0435\u043D\u044B\u0435 \u0440\u044B\u0431\u043D\u044B\u0435
     \u043A\u043E\u043D\u0441\u0435\u0440\u0432\u044B \u0438\u0437 \u0440\u0430\u0434\u0438\u043E\u0430\u043A\u0442\u0438\u0432\u043D\u044B\u0445
     \u0435\u0440\u0448\u0435\u0439 \u0438 \u043A\u043E\u0440\u044E\u0448\u043A\u0438. "
   ciklop_info:
@@ -13593,7 +14165,7 @@ MonoBehaviour:
     \u043B\u0435\u0441\u043D\u0438\u043A\u0438, \u043F\u0440\u0435\u043B\u044E\u0431\u043E\u0434\u0435\u0438,
     \u043F\u0430\u0440\u0442\u0438\u0437\u0430\u043D\u044B \u0438 \u043F\u043E\u0442\u043E\u043C\u043A\u0438
     \u0437\u0430\u043F\u043B\u0443\u0442\u0430\u0432\u0448\u0438\u0445 \u0441\u043E
-    \u0432\u0440\u0435\u043C\u0451\u043D \u0418\u0432\u0430\u043D\u0430 \u0421\u0443\u0441\u0430\u043D\u0438\u043D\u0430
+    \u0432\u0440\u0435\u043C\u0435\u043D \u0418\u0432\u0430\u043D\u0430 \u0421\u0443\u0441\u0430\u043D\u0438\u043D\u0430
     \u043F\u043E\u043B\u044F\u043A\u043E\u0432. "
   - "\u041B\u0438\u0445\u043E \u043E\u0434\u043D\u043E\u0433\u043B\u0430\u0437\u043E\u0435
     \u2014 \u043F\u043E\u0434\u0432\u0438\u0434 \u0441\u0440\u0435\u0434\u043D\u0435\u0440\u0443\u0441\u0441\u043A\u043E\u0433\u043E
@@ -13767,7 +14339,7 @@ MonoBehaviour:
     \u043D\u043E \u043F\u043E\u043B\u0443\u0434\u043D\u0438\u0446\u0430 \u2014 \u0440\u0410\u043A\u043E\u0432\u0430\u044F
     \u0436\u0435\u043D\u0449\u0438\u043D\u0430: \u0444\u043E\u043D\u0438\u0442 \u0433\u0430\u043C\u043C\u0430-\u0438\u0437\u043B\u0443\u0447\u0435\u043D\u0438\u0435\u043C
     \u0442\u0430\u043A, \u0447\u0442\u043E \u0447\u0435\u0440\u0435\u0437 \u043F\u0430\u0440\u0443
-    \u043C\u0438\u043D\u0443\u0442 \u0432 \u0435\u0451 \u043E\u0431\u0449\u0435\u0441\u0442\u0432\u0435
+    \u043C\u0438\u043D\u0443\u0442 \u0432 \u0435\u0435 \u043E\u0431\u0449\u0435\u0441\u0442\u0432\u0435
     \u0442\u044B \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0448\u044C \u0430\u0431\u043E\u043D\u0435\u043C\u0435\u043D\u0442
     \u0432 \u043E\u043D\u043A\u043E\u0434\u0438\u0441\u043F\u0430\u043D\u0441\u0435\u0440. "
   - "\u0413\u043E\u0432\u043E\u0440\u044F\u0442, \u043F\u043E\u043B\u0443\u0434\u043D\u0438\u0446\u044B
@@ -13780,7 +14352,7 @@ MonoBehaviour:
     \u043C\u0443\u0442\u0430\u0446\u0438\u0439 \u0443 \u043D\u0438\u0445 \u043F\u043E\u0435\u0445\u0430\u043B\u0430
     \u043A\u0443\u043A\u0443\u0445\u0430 \u0438 \u043E\u043D\u0438 \u0441\u0442\u0430\u043B\u0438
     \u0443\u0441\u0442\u043E\u0439\u0447\u0438\u0432\u044B\u043C\u0438 \u043A \u0440\u0430\u0434\u0438\u0430\u0446\u0438\u0438,
-    \u0445\u043E\u0442\u044F \u0441\u0430\u043C\u0438 \u0435\u0451 \u0438\u0441\u0442\u043E\u0447\u0430\u043B\u0438. "
+    \u0445\u043E\u0442\u044F \u0441\u0430\u043C\u0438 \u0435\u0435 \u0438\u0441\u0442\u043E\u0447\u0430\u043B\u0438. "
   - "\u0412 \u043F\u043E\u043B\u0443\u0434\u043D\u0438\u0446 \u043F\u0440\u0435\u0432\u0440\u0430\u0449\u0430\u043B\u0438\u0441\u044C
     \u0441\u0435\u043B\u044C\u0441\u043A\u0438\u0435 \u043F\u0440\u0435\u043B\u044E\u0431\u043E\u0434\u0435\u0439\u043A\u0438,
     \u0443 \u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043D\u0430 \u0444\u043E\u043D\u0435
@@ -13807,7 +14379,7 @@ MonoBehaviour:
     \u0430\u0444\u0440\u043E\u0434\u0438\u0437\u0438\u0430\u043A\u043E\u043C \u0438
     \u043A\u043B\u0438\u0437\u043C\u043E\u0439 \u0438\u0437 \u043C\u043E\u0447\u0435\u0432\u043E\u0433\u043E
     \u043F\u0443\u0437\u044B\u0440\u044F \u043F\u043E\u0434\u0441\u0432\u0438\u043D\u043A\u0430. "
-  - "\u041D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0443\u0447\u0451\u043D\u044B\u0435
+  - "\u041D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0443\u0447\u0435\u043D\u044B\u0435
     \u0441\u0447\u0438\u0442\u0430\u044E\u0442, \u0447\u0442\u043E \u043F\u043E\u043B\u0443\u0434\u043D\u0438\u0446\u0430\u043C\u0438
     \u0441\u0442\u0430\u043D\u043E\u0432\u0438\u043B\u0438\u0441\u044C \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u0438\u0446\u044B
     \u043C\u043E\u0441\u043A\u043E\u0432\u0441\u043A\u043E\u0439 \u0431\u0443\u0440\u0436\u0443\u0430\u0437\u0438\u0438,
@@ -13818,6 +14390,62 @@ MonoBehaviour:
     \u0432\u043E\u0441\u043F\u0440\u0438\u043D\u044F\u043B\u0438 \u0438\u0434\u0435\u044E
     \u0441\u0442\u0430\u0442\u044C \u0441\u0438\u043B\u044C\u043D\u044B\u043C\u0438
     \u043D\u0435\u0437\u0430\u0432\u0438\u0441\u0438\u043C\u044B\u043C\u0438 \u0436\u0435\u043D\u0449\u0438\u043D\u0430\u043C\u0438."
+  skull_info:
+  - "\u041F\u043D\u0443\u043B \u0442\u044B \u043D\u0435 \u043A\u0430\u043C\u0435\u043D\u044C,
+    \u0430 \u0447\u0435\u0440\u0435\u043F \u0437\u0430\u043A\u043E\u043B\u0434\u043E\u0432\u0430\u043D\u043D\u044B\u0439,
+    \u0447\u0435\u0440\u0435\u0437 \u0442\u043E \u0438 \u043F\u043E\u0433\u0438\u0431\u0435\u043B\u044C
+    \u0442\u0432\u043E\u044F \u043F\u0440\u0438\u0448\u043B\u0430. \u0412 \u0434\u0440\u0443\u0433\u043E\u0439
+    \u0440\u0430\u0437 \u0441\u043C\u043E\u0442\u0440\u0438 \u043F\u043E\u0434 \u043D\u043E\u0433\u0438,
+    \u043D\u0435 \u0435\u0448\u044C \u0436\u0435\u043B\u0442\u044B\u0439 \u0441\u043D\u0435\u0433
+    \u0438 \u043D\u0435 \u043D\u0430\u0441\u0442\u0443\u043F\u0430\u0439 \u043D\u0430
+    \u0432\u0441\u044F\u043A\u043E\u0435. "
+  - "\u041D\u0435 \u0442\u044B \u043F\u0435\u0440\u0432\u044B\u0439 \u043D\u0430\u0447\u0430\u043B
+    \u043A\u0440\u0443\u0448\u0438\u0442\u044C \u0441\u0443\u043F\u043E\u0441\u0442\u0430\u0442\u043E\u0432
+    \u0440\u0430\u0434\u0438\u043E\u0430\u043A\u0442\u0438\u0432\u043D\u044B\u0445,
+    \u0434\u043E \u0442\u0435\u0431\u044F \u0442\u0443\u0442 \u043D\u0435\u043C\u0430\u043B\u043E
+    \u0433\u0435\u0440\u043E\u0435\u0432 \u043F\u043E\u0442\u043E\u043F\u0442\u0430\u043B\u043E\u0441\u044C.
+    \u0421\u0433\u0443\u0431\u043B\u0435\u043D\u043D\u0430\u044F \u0438\u043C\u0438
+    \u0444\u0430\u0443\u043D\u0430 \u0441\u0433\u043D\u0438\u043B\u0430, \u0434\u0430
+    \u043D\u0435 \u0441\u043E\u0432\u0441\u0435\u043C, \u043A\u043E\u0435 \u043E\u0442
+    \u043A\u043E\u0433\u043E \u043E\u0441\u0442\u0430\u043B\u0438\u0441\u044C \u0437\u0430\u043F\u0447\u0430\u0441\u0442\u0438
+    \u043F\u0440\u043E\u043A\u043B\u044F\u0442\u044B\u0435. \u0422\u0430\u043A \u0447\u0442\u043E
+    \u0432 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439 \u0440\u0430\u0437
+    \u043B\u0443\u0447\u0448\u0435 \u0441\u043B\u0435\u0434\u0438, \u043A\u0443\u0434\u0430
+    \u043D\u043E\u0433\u0438 \u0441\u0442\u0430\u0432\u0438\u0448\u044C. "
+  - "\u0413\u043E\u0432\u043E\u0440\u044F\u0442, \u0447\u0435\u0440\u0435\u043F\u0430
+    \u0441\u0434\u043E\u0445\u0448\u0438\u0445 \u043D\u0430\u0441\u0438\u043B\u044C\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0439
+    \u0441\u043C\u0435\u0440\u0442\u044C\u044E \u0432\u0443\u0440\u0434\u0430\u043B\u0430\u043A\u043E\u0432
+    \u043F\u0440\u0438\u043D\u043E\u0441\u044F\u0442 \u043D\u0435\u0441\u0447\u0430\u0441\u0442\u044C\u0435,
+    \u0438\u043C\u043F\u043E\u0442\u0435\u043D\u0446\u0438\u044E \u0438 \u043C\u043E\u0447\u0435\u043A\u0430\u043C\u0435\u043D\u043D\u0443\u044E
+    \u0431\u043E\u043B\u0435\u0437\u043D\u044C. \u0410 \u043F\u043E\u0441\u043B\u0435
+    \u0449\u0435\u0434\u0440\u043E\u0439 \u0434\u043E\u0437\u044B \u0440\u0430\u0434\u0438\u0430\u0446\u0438\u0438
+    \u0438\u0445 \u043B\u0443\u0447\u0449\u0435 \u0432\u043E\u043E\u0431\u0449\u0435
+    \u043D\u0435 \u0442\u0440\u043E\u0433\u0430\u0442\u044C, \u0432\u043F\u0440\u0435\u0434\u044C
+    \u0446\u0435\u043B\u0435\u0435 \u0431\u0443\u0434\u0435\u0448\u044C."
+  - "\u041E\u0442\u0432\u044B\u043A\u0430\u0439 \u043F\u0438\u043D\u0430\u0442\u044C
+    \u0432\u0441\u0451, \u0447\u0442\u043E \u043D\u0430 \u0437\u0435\u043C\u043B\u0435-\u043C\u0430\u0442\u0443\u0448\u043A\u0435
+    \u0432\u0430\u043B\u044F\u0435\u0442\u0441\u044F. \u041F\u043E\u0441\u043B\u0435
+    \u0432\u0437\u0440\u044B\u0432\u0430 1812 \u0433\u043E\u0434\u0430 \u043C\u043D\u043E\u0433\u043E
+    \u0432\u0441\u044F\u043A\u043E\u0439 \u0434\u0440\u044F\u043D\u0438 \u043E\u0441\u0442\u0430\u043B\u043E\u0441\u044C
+    \u0432 \u0442\u0440\u0430\u0432\u0435-\u043C\u0443\u0440\u0430\u0432\u0435, \u043A\u0443\u0441\u0442\u0430\u0445
+    \u0434\u0430 \u043B\u0435\u0441\u0430\u0445, \u0431\u0443\u0435\u0440\u0430\u043A\u0430\u0445
+    \u0434\u0430 \u043A\u043E\u043B\u0434\u043E\u0435\u0431\u0438\u043D\u0430\u0445.
+    \u0421\u0442\u0443\u043F\u0430\u0439 \u0430\u043A\u043A\u0443\u0440\u0430\u0442\u043D\u043E,
+    \u043D\u0435 \u0442\u043E \u043F\u043E\u043F\u043E\u043B\u043D\u0438\u0448\u044C
+    \u0441\u043F\u0438\u0441\u043E\u043A \u043F\u0440\u0435\u0442\u0435\u043D\u0434\u0435\u043D\u0442\u043E\u0432
+    \u043D\u0430 \u043F\u0440\u0435\u043C\u0438\u044E \u0414\u0430\u0440\u0432\u0438\u043D\u0430. "
+  - "\u0413\u043E\u0432\u043E\u0440\u044F\u0442, \u0438\u0434\u0435\u044F \u043F\u0440\u043E\u0442\u0438\u0432\u043E\u043F\u0435\u0445\u043E\u0442\u043D\u044B\u0445
+    \u043C\u0438\u043D \u0437\u0430\u0440\u043E\u0434\u0438\u043B\u0430\u0441\u044C
+    \u043F\u043E\u0441\u043B\u0435 \u0442\u043E\u0433\u043E, \u043A\u0430\u043A \u043A\u0443\u0447\u0430
+    \u043D\u0430\u0440\u043E\u0434\u0443 \u0434\u0430 \u0441\u043A\u043E\u0442\u0430
+    \u043F\u0430\u043B\u043E \u0436\u0435\u0440\u0442\u0432\u0430\u043C\u0438 \u0447\u0435\u0440\u0435\u043F\u043E\u0432
+    \u0442\u0440\u0435\u043A\u043B\u044F\u0442\u044B\u0445, \u043E\u0441\u0442\u0430\u0432\u0448\u0438\u0445\u0441\u044F
+    \u043E\u0442 \u0432\u0441\u044F\u043A\u043E\u0439 \u043D\u0435\u0447\u0438\u0441\u0442\u0438,
+    \u043A\u043E\u044F \u0431\u0443\u0434\u0435\u0442 \u0435\u0449\u0435 \u0441\u043E\u0442\u043D\u0438
+    \u043B\u0435\u0442 \u0444\u043E\u043D\u0438\u0442\u044C \u0440\u0435\u043D\u0442\u0433\u0435\u043D\u0430\u043C\u0438.
+    \u0412\u043F\u0440\u0435\u0434\u044C \u043D\u0430\u0441\u0442\u0443\u043F\u0430\u0439
+    \u0442\u043E\u043B\u044C\u043A\u043E \u043D\u0430 \u0442\u043E, \u0432 \u0447\u0435\u043C
+    \u0443\u0432\u0435\u0440\u0435\u043D. "
   test: 0
 --- !u!1 &997890151
 GameObject:
@@ -19834,8 +20462,8 @@ MonoBehaviour:
     \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u043F\u043E\u043F\u043E\u0440\u0442\u0438\u043B\u0430
     \u0435\u0433\u043E \u0432\u043D\u0435\u0448\u043D\u043E\u0441\u0442\u044C."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 56c8d09570561ce47a8992be63ce52d3, type: 2}
+  m_sharedMaterial: {fileID: 6888826522845628809, guid: 9bf58ee7094499b4d9c420f9146c050e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19859,7 +20487,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.8
+  m_fontSize: 31.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -19898,7 +20526,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1479597848
@@ -20101,6 +20729,7 @@ MonoBehaviour:
   forest: 0
   desert: 0
   music: {fileID: 244771904}
+  bw_music: {fileID: 0}
   i: 2
   test: 0
   first: 0
@@ -25840,6 +26469,7 @@ GameObject:
   - component: {fileID: 1941040507}
   - component: {fileID: 1941040508}
   - component: {fileID: 1941040509}
+  - component: {fileID: 1941040510}
   m_Layer: 0
   m_Name: "\u041B\u0435\u0441"
   m_TagString: Untagged
@@ -25863,6 +26493,7 @@ MonoBehaviour:
   forest: 1
   desert: 0
   music: {fileID: 1941040507}
+  bw_music: {fileID: 1941040510}
   i: 0
   test: 0
   first: 1
@@ -26081,6 +26712,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   i: 0
   back: 1
+--- !u!82 &1941040510
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941040503}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 937a898002b9bb54e9794589729fa2a1, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1956580804
 GameObject:
   m_ObjectHideFlags: 0

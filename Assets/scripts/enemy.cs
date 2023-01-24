@@ -11,7 +11,7 @@ public class enemy : MonoBehaviour
     public Animator anim;
     public bool death;
     private bool sound_chek,score_chek;
-    public AudioSource hit,death_sound;
+    public AudioSource hit,death_sound, bw_death_sound,graf_sign;
     public float damage;
     private Rigidbody2D rb;
     void Start()
@@ -24,7 +24,6 @@ public class enemy : MonoBehaviour
     {
         DestroyChek();
 
-        //transform.Translate(Vector2.down * speed * Time.deltaTime);
         rb.velocity = new Vector2(0, -speed);
         if (pol == false)
         {
@@ -35,7 +34,12 @@ public class enemy : MonoBehaviour
                 {
                     sound_chek = true;
                     if (PlayerPrefs.GetInt("music") != -1)
-                        death_sound.Play();
+                    {
+                        if (BWMode.mod == false)
+                            death_sound.Play();
+                        else
+                            bw_death_sound.Play();
+                    }
                 }
             }
             if (test == true)
@@ -44,6 +48,15 @@ public class enemy : MonoBehaviour
     }
     void DestroyChek()
     {
+        if(transform.position.y <= -2.6f)
+            if (sound_chek == false)
+            {
+                sound_chek = true;
+                if (PlayerPrefs.GetInt("music") != -1)
+                {
+                    graf_sign.Play();
+                }
+            }
         if (transform.position.y <= -5.6f)
         {
             Destroy(gameObject);
@@ -62,7 +75,10 @@ public class enemy : MonoBehaviour
                 death_info.i = icon_i;
                 other.gameObject.GetComponent<hero>().damage();
                 if (PlayerPrefs.GetInt("music") != -1)
-                    hit.Play();
+                {
+                    if (BWMode.mod == false)
+                        hit.Play();
+                }
             }
             else
             {
@@ -73,6 +89,16 @@ public class enemy : MonoBehaviour
                     score.score_value += 75;
                 }
             }
+        }
+        if (other.name == "circle")
+        {
+            death = true;
+            if (score_chek == false)
+            {
+                score_chek = true;
+                score.score_value += 75;
+            }
+
         }
     }
 }

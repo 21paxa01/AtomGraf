@@ -9,10 +9,12 @@ public class spawn_enemies : MonoBehaviour
     private int i,j;
     public bool spawn,test;
     public GameObject kolobok_menu;
+    private int skull_chek;
     void Start()
     {
         StartCoroutine(Spawn());
         StartCoroutine(Spawn_bosters());
+        skull_chek = 1;
     }
     void Update()
     {
@@ -24,7 +26,14 @@ public class spawn_enemies : MonoBehaviour
         {
             yield return new WaitForSeconds(2f);
             Enemy_position();
-            Instantiate(enemies_arr[i], new Vector3(x, 5.7f, 0), transform.rotation);
+            skull_chek++;
+            if (skull_chek < 11)
+                Instantiate(enemies_arr[i], new Vector3(x, 5.7f, 0), transform.rotation);
+            else
+            {
+                Instantiate(enemies_arr[8], new Vector3(x, 5.7f, 0), transform.rotation);
+                skull_chek = 1;
+            }
         }
     }
     IEnumerator Spawn_bosters()
