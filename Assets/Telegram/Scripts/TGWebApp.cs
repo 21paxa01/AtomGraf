@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -14,10 +15,16 @@ namespace Telegram.WebApp
 {
     public class TGWebApp : MonoBehaviour
     {
-        [SerializeField] private string RestApiURL = "https://telegram.immortal-games.online/Games/rest/";
-        private const string init = "init.php";
+        //[SerializeField] 
+        private const string RestApiURL = "https://telegram.immortal-games.online/Games/dev/rest/";
+        private const string init = "tgauth.php";
         private const string stats = "stats.php";
         private const string set = "set.php";
+        private const string start = "start.php";
+        private const string end = "end.php";
+        private const string step = "step.php";
+        private const string memory = "mem.php";
+        private const string bonus = "bonus.php";
         public static TGWebApp instance;
         [DllImport("__Internal")]
         private static extern string GetUserData();
@@ -62,22 +69,19 @@ namespace Telegram.WebApp
             };
 #endif
 
-           
+
             Debug.Log("Telegram Web App init");
         }
         public UnityWebRequestAsyncOperation Init()
         {
             string uri = Path.Combine(RestApiURL, init);
+            Debug.Log(uri);
             WWWForm form = new WWWForm();
 #if UNITY_EDITOR
             form.AddField("initData", "test");
 #else
             form.AddField("initData", GetInitData());
-            form.AddField("hash", GetHash());
-
-#endif
-            form.AddField("username", userData.username);
-            form.AddField("id", userData.id.ToString());
+#endif       
             UnityWebRequest request = UnityWebRequest.Post(uri, form);
             return request.SendWebRequest();
         }
@@ -88,28 +92,55 @@ namespace Telegram.WebApp
             var table = new RateTable(request.SendWebRequest());
             return table;
         }
+        /*
         public UnityWebRequestAsyncOperation SetScore(int score)
         {
             string uri = Path.Combine(RestApiURL, set);
-           
-            var data = new ScoreData() { score=score, username = userData.username };
+
+            var data = new ScoreData() { score = score, username = userData.username };
             string json = JsonUtility.ToJson(data);
             json = Encode(json);
-            UnityWebRequest request = UnityWebRequest.Post(uri,new WWWForm());
+            UnityWebRequest request = UnityWebRequest.Post(uri, new WWWForm());
             byte[] jsonToSend = new UTF8Encoding().GetBytes(json);
             request.uploadHandler = new UploadHandlerRaw(jsonToSend);
             request.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
             //request.SetRequestHeader("Content-Type", "application/json");
             return request.SendWebRequest();
-        }
-#if UNITY_EDITOR
-        [MenuItem("MyMenu/Do Something")]
-        public static void Test()
-        {
+        }*/
 
-            
+        public UnityWebRequestAsyncOperation StartGame()
+        {
+            string uri = Path.Combine(RestApiURL, start);
+            var req = UnityWebRequest.Get(uri);
+            return req.SendWebRequest();
         }
-#endif
+
+        public UnityWebRequestAsyncOperation EndGame(int score)
+        {
+            string uri = Path.Combine(RestApiURL, end);
+            WWWForm form = new WWWForm();
+            form.AddField("score", score);
+            var req = UnityWebRequest.Post(uri, form);
+            return req.SendWebRequest();
+        }
+        public UnityWebRequestAsyncOperation Step()
+        {
+            string uri = Path.Combine(RestApiURL, step);
+            var req = UnityWebRequest.Get(uri);
+            return req.SendWebRequest();
+        }
+        public UnityWebRequestAsyncOperation MemoryHack()
+        {
+            string uri = Path.Combine(RestApiURL, memory);
+            var req = UnityWebRequest.Get(uri);
+            return req.SendWebRequest();
+        }
+        public UnityWebRequestAsyncOperation Bonus()
+        {
+            string uri = Path.Combine(RestApiURL, bonus);
+            var req = UnityWebRequest.Get(uri);
+            return req.SendWebRequest();
+        }
         public static string Encode(string message)
         {
 
@@ -153,17 +184,20 @@ namespace Telegram.WebApp
             this.request = request;
         }
 
-        public override bool keepWaiting { get { 
-        
-                if(request == null)
+        public override bool keepWaiting
+        {
+            get
+            {
+
+                if (request == null)
                     return false;
-                if(!request.isDone)
+                if (!request.isDone)
                     return true;
                 Debug.Log(request.webRequest.downloadHandler.text);
-                JsonUtility.FromJsonOverwrite(request.webRequest.downloadHandler.text,this);
+                JsonUtility.FromJsonOverwrite(request.webRequest.downloadHandler.text, this);
                 down = down.Reverse().ToArray();
-                return false; 
-            } 
+                return false;
+            }
         }
     }
 
@@ -175,5 +209,30 @@ namespace Telegram.WebApp
         public string first_name;
         public string username;
     }
+    public static class UnityWebRequestExtensions
+    { 
+        public static UnityWebRequestAsyncOperation LogRequest(this UnityWebRequestAsyncOperation operation)
+        {
+#if UNITY_EDITOR
+            operation.ContinueWith((x) =>
+            {
+                Debug.Log("Result"+ operation.webRequest.result);
+                Debug.Log("Text" + operation.webRequest.downloadHandler.text);
+                Debug.Log("Code" + operation.webRequest.responseCode);
 
+            });
+#endif
+            return operation;
+        }
+        public static UnityWebRequestAsyncOperation ContinueWith(this UnityWebRequestAsyncOperation operation,Action<UnityWebRequestAsyncOperation> action)
+        {
+            TGWebApp.instance.StartCoroutine(operation.Wait(action));
+            return operation;
+        }
+        private static IEnumerator Wait(this UnityWebRequestAsyncOperation operation,Action<UnityWebRequestAsyncOperation> action)
+        {
+            yield return new WaitUntil( () =>operation.isDone);
+            action?.Invoke(operation);
+        }
+    }
 }

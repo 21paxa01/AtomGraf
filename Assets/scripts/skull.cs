@@ -51,6 +51,7 @@ public class skull : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        score.CheckHash();
         if (other.name == "hero")
         {
             if (other.gameObject.GetComponent<hero>().kick == false && death == false)
@@ -75,7 +76,7 @@ public class skull : MonoBehaviour
                 if (score_chek == false)
                 {
                     score_chek = true;
-                    score.score_value += 100;
+                    score.AddScore(100);
                 }
             }
         }

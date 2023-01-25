@@ -10,7 +10,7 @@ public class Example : MonoBehaviour
     {
         var init = app.Init();
         yield return init;
-        var setscore = app.SetScore(100);
+        var setscore = app.EndGame(100);
         yield return setscore;
         
         Debug.Log(setscore.webRequest.downloadHandler.text);

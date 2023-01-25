@@ -27,7 +27,7 @@ public class lightning : MonoBehaviour
         {
             if (other.GetComponent<enemy>().death == false)
             {
-                score.score_value += 50;
+                score.AddScore(50);
                 other.GetComponent<enemy>().death = true;
             }
         }

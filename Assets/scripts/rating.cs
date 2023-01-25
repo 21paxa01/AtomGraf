@@ -47,16 +47,17 @@ public class rating : MonoBehaviour
             Init();
         var RateTable = TGWebApp.instance.GetRateTable(count);
         yield return RateTable;
-        for (int i = 0; i < count; i++)
+        
+        for (int i = 0; i < count && i < RateTable.top.Length; i++)
         {
             top[i].SetPlayerInfo(RateTable.top[i]);
             if (RateTable.top[i].username == RateTable.my.username)
                 top[i].ImageColor();
         }
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < count && i < RateTable.down.Length; i++)
         {
             down[i].SetPlayerInfo(RateTable.down[i]);
-            if(RateTable.down[i].username== RateTable.my.username)
+            if(RateTable.down[i].username == RateTable.my.username)
                 down[i].ImageColor();
         }
         my.SetPlayerInfo(RateTable.my);

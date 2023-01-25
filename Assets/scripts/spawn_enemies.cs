@@ -16,10 +16,6 @@ public class spawn_enemies : MonoBehaviour
         StartCoroutine(Spawn_bosters());
         skull_chek = 1;
     }
-    void Update()
-    {
-        
-    }
     IEnumerator Spawn()
     {
         while (spawn == true)
@@ -49,11 +45,12 @@ public class spawn_enemies : MonoBehaviour
     {
         x = Random.Range(-2.4f, 2.4f);
         i = Random.Range(0, 8);
-        j= Random.Range(0,3);
+        j = Random.Range(0,3);
     }
     public void MenuOn()
     {
         kolobok_menu.SetActive(true);
-        score.score_value += 3000;
+        //score.AddScore( 3000);
+        score.GetBonus();
     }
 }

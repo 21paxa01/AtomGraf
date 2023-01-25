@@ -54,7 +54,8 @@ public class enemy : MonoBehaviour
                 sound_chek = true;
                 if (PlayerPrefs.GetInt("music") != -1)
                 {
-                    graf_sign.Play();
+                    if(pol)
+                        graf_sign.Play();
                 }
             }
         if (transform.position.y <= -5.6f)
@@ -64,8 +65,10 @@ public class enemy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        score.CheckHash();
         if (other.name == "hero")
         {
+            
             if (other.gameObject.GetComponent<hero>().kick == false && death == false)
             {
                 if (other.gameObject.GetComponent<hero>().shield == false)
@@ -86,7 +89,7 @@ public class enemy : MonoBehaviour
                 if (score_chek == false)
                 {
                     score_chek = true;
-                    score.score_value += 75;
+                    score.AddScore(75);
                 }
             }
         }
@@ -96,7 +99,7 @@ public class enemy : MonoBehaviour
             if (score_chek == false)
             {
                 score_chek = true;
-                score.score_value += 75;
+                score.AddScore(75);
             }
 
         }

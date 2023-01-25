@@ -770,11 +770,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: 6aa30444-ec09-4ac7-a4bc-2be577caa3ae
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: AtomGraf
+  organizationId: eikobo
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

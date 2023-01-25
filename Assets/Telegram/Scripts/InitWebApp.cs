@@ -11,7 +11,7 @@ public class InitWebApp : MonoBehaviour
         if(isInit)
             yield break;
         loadScreen.gameObject.SetActive(true);
-        var request = TGWebApp.instance.Init();
+        var request = TGWebApp.instance.Init().LogRequest();
         yield return request;
         if(request.webRequest.result!=UnityEngine.Networking.UnityWebRequest.Result.Success)
         {
