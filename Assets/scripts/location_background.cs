@@ -38,16 +38,24 @@ public class location_background : MonoBehaviour
         }
         else
         {
-            if (BWMode.mod == false)
+            if (locations.location_i == i)
             {
-                music.volume = 1;
-                bw_music.volume = 0;
+                if (BWMode.mod == false)
+                {
+                    music.volume = 1;
+                    bw_music.volume = 0;
+                }
+                else
+                {
+
+                    music.volume = 0;
+                    bw_music.volume = 1;
+                }
             }
             else
             {
-
                 music.volume = 0;
-                bw_music.volume = 1;
+                bw_music.volume = 0;
             }
         }
         
@@ -56,13 +64,6 @@ public class location_background : MonoBehaviour
     {
         if (test <= -13f)
             transform.position = new Vector3(transform.position.x, 19.09633f*1.5f, transform.position.z);
-        if (PlayerPrefs.GetInt("music") == 1)
-        {
-            if (locations.location_i != i)
-                music.volume = 0;
-            else
-                music.volume = 1;
-        }
     }
     public void UpdeteLocate()
     {
